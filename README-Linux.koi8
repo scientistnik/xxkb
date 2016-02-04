@@ -1,0 +1,13 @@
+
+  Для пользователей различных дистрибутивов Linix'а.
+
+  Если вы используете "менеджер пакетов" RPM, то собрать соответствующий
+пакет из этого дистрибутива (xxkb-%{version}.rpm) можно командой
+rpm -ta xxkb-%{version}.tgz 
+Автор xxkb.spec - Владимир Бормотов.
+
+  Пакет для Debian'а (xxkb-*.deb) можно найти на
+ftp://lpcs.math.msu.ru/pub/Linix/Debian/local/  или
+http://lpcs.math.msu.ru/~ran/debian/
+Автор - Артем Чуприна.
+"Artem Chuprina <ram@ran.pp.ru>"

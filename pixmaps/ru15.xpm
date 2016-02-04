@@ -1,0 +1,25 @@
+/* XPM */
+static char *ru15[] = {
+/* width height num_colors chars_per_pixel */
+"    15    15        3            1",
+/* colors */
+". c white",
+"# c blue",
+"a c red",
+/* pixels */
+"...............",
+"...............",
+"...............",
+"...............",
+"...............",
+"###############",
+"###############",
+"###############",
+"###############",
+"###############",
+"aaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaa"
+};

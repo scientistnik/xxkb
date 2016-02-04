@@ -1,0 +1,48 @@
+
+The xxkb program is a keyboard layout switcher and indicator. Unlike the
+programs that reload keyboard maps and use their own hot-keys, xxkb is a
+simple GUI for XKB (X KeyBoard extension) and just sends commands to and
+accepts events from XKB. That means that it will work with the existing
+setup of your X Server without any modifications.
+
+Additional features are:
+
+* xxkb remembers the current layout in each application and switches to
+it on the focus change
+  
+* xxkb can put it's own icon on an application window titlebar, such an
+icon is a 'local' layout switcher and indicator for that application
+  
+* if a complete keymap has more than two layouts, xxkb allows to
+designate two of them as main and alternative ones and switch between
+them only.
+  
+* The alternative layout can be set separately for each application and
+can be changed on a run-time.
+  
+* xxkb supports lists of applications for which some special actions are
+necessary: ignoring window(for those for which preserving of the current
+layout is undesired), setting the current and alternative layouts on the
+application startup.
+
+* xxkb can be docked as a docklet in the WindowMaker and can be placed in
+the Notification area(systray) of the Gnome, KDE and some other FreeDesktop
+standards compatible window managers.
+
+Build and Install
+----------------
+
+In the xxkb source directory run:
+
+xmkmf
+make
+make install
+
+(for the last one you probably need root privileges)
+
+Configure and run-time operation
+-------------------------------
+
+Read man xxkb.
+
+The official site of xxkb is http://www.sourceforge.net/projects/xxkb/

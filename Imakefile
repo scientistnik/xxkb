@@ -1,0 +1,35 @@
+#include "xxkb.tmpl"
+
+BASEDIR = $(PROJECTROOT)
+BINDIR = $(BASEDIR)/bin
+PIXMAPDIR = $(BASEDIR)/share/xxkb
+LOCAL_LIBRARIES = $(XONLYLIB) -lXext -lXpm -lXt
+
+OBJS = xxkb.o resource.o wlist.o
+PIXMAPS = pixmaps/by15.xpm pixmaps/by48.xpm \
+	  pixmaps/de15.xpm pixmaps/de48.xpm \
+	  pixmaps/en15.xpm pixmaps/en48.xpm \
+	  pixmaps/ru15.xpm pixmaps/ru48.xpm \
+	  pixmaps/su15.xpm pixmaps/su48.xpm \
+	  pixmaps/ua15.xpm pixmaps/ua48.xpm \
+	  pixmaps/il15.xpm pixmaps/il48.xpm \
+	  pixmaps/bg15.xpm pixmaps/bg48.xpm
+
+DEFINES = -DAPPDEFDIR=\"$(DESTDIR)$(XAPPLOADDIR)\" -DAPPDEFFILE=\"XXkb\" \
+	-DXT_RESOURCE_SEARCH -DSHAPE_EXT
+
+#if WITH_SVG_SUPPORT
+DEFINES += -DSVG_GRAPHICS
+CFLAGS += `pkg-config --cflags glib-2.0 gdk-pixbuf-xlib-2.0 librsvg-2.0`
+LOCAL_LIBRARIES += `pkg-config --libs glib-2.0 gdk-pixbuf-xlib-2.0 librsvg-2.0`
+#endif
+
+CDEBUGFLAGS = -O2 -Wall
+SED = sed
+
+ComplexProgramTarget(xxkb)
+
+PatchFile(XXkb.ad.var,XXkb.ad,"s#PIXMAPDIR#$(DESTDIR)$(PIXMAPDIR)#g")
+InstallAppDefaults(XXkb)
+
+InstallMultiple($(PIXMAPS),$(PIXMAPDIR))

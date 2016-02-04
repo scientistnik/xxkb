@@ -1,0 +1,16 @@
+/* -*- mode: c; -*- */
+
+/*
+ * PatchFile -- generate a rule to patch a file before some further
+ * processing.
+ * Destination file is a made in all and cleaned in clean targets.
+ */
+
+#ifndef PatchFile
+#define PatchFile(src,dest,pattern)					@@\
+dest:: src								@@\
+	$(SED) -e pattern src > $@					@@\
+all:: dest								@@\
+clean::									@@\
+	RemoveFile(dest)
+#endif /* PatchFile */
